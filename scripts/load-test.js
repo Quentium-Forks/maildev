@@ -1,4 +1,3 @@
-
 /**
  * MailDev - load-test.js -- start a load test
  *
@@ -28,8 +27,8 @@ const messages = [
     },
     text: 'They only live to get radical.',
     html: '<!DOCTYPE html><html><head></head><body>' +
-          '<p>They only live to get radical.</p>' +
-          '</body></html>',
+      '<p>They only live to get radical.</p>' +
+      '</body></html>',
     attachments: [
       { fileName: 'stimulating.txt', content: 'Stimulating', contentType: 'text/plain' }
     ]

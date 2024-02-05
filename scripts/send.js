@@ -1,4 +1,3 @@
-
 /**
  * MailDev - send.js -- send a few emails for testing
  *
@@ -40,9 +39,9 @@ const messages = [
     },
     text: 'The wax at the bank was surfer wax!!!',
     html: '<!DOCTYPE html><html><head></head><body>' +
-          '<script type=\'text/javascript\'>alert("Hello World")</script>' +
-          '<p>The wax at the bank was surfer wax!!!</p>' +
-          '</body></html>',
+      '<script type=\'text/javascript\'>alert("Hello World")</script>' +
+      '<p>The wax at the bank was surfer wax!!!</p>' +
+      '</body></html>',
     attachments: [
       { fileName: 'notes.txt', content: 'Info on surf board wax', contentType: 'text/plain' }
     ]
@@ -58,8 +57,8 @@ const messages = [
     },
     text: 'Look at it! It\'s a once in a lifetime opportunity, man! Let me go out there and let me get one wave, just one wave before you take me in. I mean, come on man, where I am I gonna go? Cliffs on both sides! I\'m not gonna paddle my way to New Zealand! Come on, compadre. Come on!\n'.repeat(100),
     html: '<!DOCTYPE html><html><head></head><body>' +
-          '<p>Look at it! It\'s a once in a lifetime opportunity, man! Let me go out there and let me get one wave, just one wave before you take me in. I mean, come on man, where I am I gonna go? Cliffs on both sides! I\'m not gonna paddle my way to New Zealand! Come on, compadre. Come on!</p>'.repeat(100) +
-          '</body></html>'
+      '<p>Look at it! It\'s a once in a lifetime opportunity, man! Let me go out there and let me get one wave, just one wave before you take me in. I mean, come on man, where I am I gonna go? Cliffs on both sides! I\'m not gonna paddle my way to New Zealand! Come on, compadre. Come on!</p>'.repeat(100) +
+      '</body></html>'
   },
 
   // Plain text email
@@ -77,11 +76,11 @@ const messages = [
     subject: 'The ultimate price',
     text: 'If you want the ultimate, you\'ve got to be willing to pay the ultimate price. \nIt\'s not tragic to die doing what you love.',
     html: '<!DOCTYPE html><html><head></head><body style="background:#eee;font-family:sans-serif;padding:2em 2em">' +
-          '<h1>Point Break</h1>' +
-          '<img src="http://farm8.staticflickr.com/7337/11784709785_bbed9bae7d_m.jpg">' +
-          '<p>If you want the ultimate, you\'ve got to be willing to pay the ultimate price. <br>It\'s not tragic to die doing what you love.</p>' +
-          '<p><strong>- Bodhi</strong></p>' +
-          '</body></html>'
+      '<h1>Point Break</h1>' +
+      '<img src="http://farm8.staticflickr.com/7337/11784709785_bbed9bae7d_m.jpg">' +
+      '<p>If you want the ultimate, you\'ve got to be willing to pay the ultimate price. <br>It\'s not tragic to die doing what you love.</p>' +
+      '<p><strong>- Bodhi</strong></p>' +
+      '</body></html>'
   },
 
   // Email w/ embedded image
