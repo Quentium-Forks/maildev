@@ -6,7 +6,7 @@
  */
 
 const assert = require('assert')
-const SMTPConnection = require('../vendor/smtp-connection')
+const SMTPConnection = require('nodemailer/lib/smtp-connection')
 // const http = require('http')
 // const delay = require('../lib/utils').delay
 
