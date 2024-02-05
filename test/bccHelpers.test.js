@@ -1,12 +1,12 @@
 /* global describe, it */
 'use strict'
-const expect = require('expect')
-const { calculateBcc } = require('../lib/helpers/bcc')
+const { expect } = require('expect')
+const bcc = require('../lib/helpers/bcc')
 
 describe('[bcc helpers]', () => {
   describe('calculateBcc', () => {
     it('works with empty addresses', () => {
-      const actual = calculateBcc([], [], [])
+      const actual = bcc.calculateBcc([], [], [])
 
       expect(actual).toEqual([])
     })
@@ -15,7 +15,7 @@ describe('[bcc helpers]', () => {
       const recipients = ['x@y', 'a@b']
       const to = ['a@b']
       const cc = ['x@y']
-      calculateBcc(recipients, to, cc)
+      bcc.calculateBcc(recipients, to, cc)
 
       expect(recipients).toEqual(['x@y', 'a@b'])
       expect(to).toEqual(['a@b'])
@@ -24,19 +24,19 @@ describe('[bcc helpers]', () => {
 
     describe('calculates bcc as the difference of (recipients - to - cc)', () => {
       it('empty when all recipients are consumed', () => {
-        const actual = calculateBcc(['x@y', 'a@b'], ['a@b'], ['x@y'])
+        const actual = bcc.calculateBcc(['x@y', 'a@b'], ['a@b'], ['x@y'])
 
         expect(actual).toEqual([])
       })
 
       it('when same recipient is in TO, CC and BCC', () => {
-        const actual = calculateBcc(['a@b', 'a@b', 'a@b'], ['a@b'], ['a@b'])
+        const actual = bcc.calculateBcc(['a@b', 'a@b', 'a@b'], ['a@b'], ['a@b'])
 
         expect(actual).toEqual([{ address: 'a@b', name: '' }])
       })
 
       it('comparison of addresses is case sensitive', () => {
-        const actual = calculateBcc(
+        const actual = bcc.calculateBcc(
           ['bodhi@gmail.com', 'johnny.first@fbi.gov', 'Johnny.first@fbi.gov'],
           ['Johnny.first@fbi.gov'],
           ['bodhi@gmail.com'])

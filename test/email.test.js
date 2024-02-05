@@ -9,7 +9,6 @@ const fs = require('fs')
 const http = require('http')
 const path = require('path')
 const nodemailer = require('nodemailer')
-
 const MailDev = require('../index.js')
 
 const port = 9025
@@ -62,9 +61,9 @@ describe('email', () => {
       subject: 'Test cid replacement #1',
       text: 'The wax at the bank was surfer wax!!!',
       html: '<!DOCTYPE html><html><head></head><body>' +
-            '<script type=\'text/javascript\'>alert("Hello World")</script>' +
-            '<p>The wax at the bank was surfer wax!!!</p>' +
-            '</body></html>'
+        '<script type=\'text/javascript\'>alert("Hello World")</script>' +
+        '<p>The wax at the bank was surfer wax!!!</p>' +
+        '</body></html>'
     }
 
     return new Promise((resolve, reject) => {
@@ -96,9 +95,9 @@ describe('email', () => {
       to: 'bodhi@gmail.com',
       subject: 'Test html table',
       html: '<table style="border:1px solid red">' +
-            '<tr><td>A1</td><td>B1</td></tr>' +
-            '<tr><td>A2</td><td>B2</td></tr>' +
-            '</table>'
+        '<tr><td>A1</td><td>B1</td></tr>' +
+        '<tr><td>A2</td><td>B2</td></tr>' +
+        '</table>'
     }
 
     return new Promise((resolve, reject) => {
@@ -130,8 +129,8 @@ describe('email', () => {
       to: 'bodhi@gmail.com',
       subject: 'Test html form',
       html: '<form action="mailto:example@example.com?subject=Form Submission" method="POST" enctype="text/plain">' +
-            '<input type="text" id="name" name="name">' +
-            '</form>'
+        '<input type="text" id="name" name="name">' +
+        '</form>'
     }
 
     return new Promise((resolve, reject) => {

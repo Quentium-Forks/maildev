@@ -8,7 +8,7 @@
 const assert = require('assert')
 const nodemailer = require('nodemailer')
 const MailDev = require('../index.js')
-const delay = require('../lib/utils').delay
+const { delay } = require('../lib/utils')
 
 // email opts for nodemailer
 const emailOpts = {

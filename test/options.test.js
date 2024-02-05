@@ -1,5 +1,6 @@
 /* global describe, it */
-const expect = require('expect')
+'use strict'
+const { expect } = require('expect')
 const { appendOptions } = require('../lib/options')
 
 describe('options', () => {

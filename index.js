@@ -5,7 +5,7 @@
  * Licensed under the MIT License.
  */
 
-const { program } = require('commander')
+const commander = require('commander')
 const async = require('async')
 const pkg = require('./package.json')
 const web = require('./lib/web')
@@ -18,7 +18,7 @@ module.exports = function (config) {
 
   if (!config) {
     // CLI
-    config = appendOptions(program.version(version).allowUnknownOption(true), options)
+    config = appendOptions(commander.program.version(version).allowUnknownOption(true), options)
       .parse(process.argv)
       .opts()
   }

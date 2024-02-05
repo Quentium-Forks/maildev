@@ -11,7 +11,7 @@ const assert = require('assert')
 const path = require('path')
 const nodemailer = require('nodemailer')
 const express = require('express')
-const proxyMiddleware = require('http-proxy-middleware').createProxyMiddleware
+const { createProxyMiddleware } = require('http-proxy-middleware')
 const got = require('got')
 const MailDev = require('../index.js')
 
@@ -19,6 +19,7 @@ const smtpPort = 9080
 const webPort = 9081
 const proxyPort = 9082
 const host = '0.0.0.0'
+
 const createTransporter = async () => {
   const { user, pass } = await nodemailer.createTestAccount()
   return nodemailer.createTransport({
@@ -51,7 +52,7 @@ describe('middleware', function () {
     })
 
     // proxy all maildev requests to the maildev app
-    const proxy = proxyMiddleware('/maildev', {
+    const proxy = createProxyMiddleware('/maildev', {
       target: `http://${host}:${webPort}`,
       ws: true,
       logLevel: 'silent'
