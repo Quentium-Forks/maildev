@@ -64,6 +64,7 @@
     "express": "^4.18.2",
     "iconv-lite": "^0.6.3",
     "jsdom": "^24.0.0",
+    "mailparser2-mit": "^1.0.1",
     "mime": "3.0.0",
     "nodemailer": "^6.9.9",
     "rimraf": "^5.0.5",
