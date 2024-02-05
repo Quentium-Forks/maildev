@@ -1,4 +1,3 @@
-
 /**
  * MailDev - index.js
  *
@@ -6,7 +5,7 @@
  * Licensed under the MIT License.
  */
 
-const program = require('commander')
+const { program } = require('commander')
 const async = require('async')
 const pkg = require('./package.json')
 const web = require('./lib/web')
@@ -15,7 +14,7 @@ const logger = require('./lib/logger')
 const { options, appendOptions } = require('./lib/options')
 
 module.exports = function (config) {
-  const version = pkg.version
+  const { version } = pkg
 
   if (!config) {
     // CLI
