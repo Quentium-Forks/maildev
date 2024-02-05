@@ -53,6 +53,10 @@ describe('email', () => {
     })
   })
 
+  afterEach(function (done) {
+    setTimeout(done, 100)
+  })
+
   it('should strip javascript from emails', async () => {
     const transporter = await createTransporter()
     const emailForTest = {
